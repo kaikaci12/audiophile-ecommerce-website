@@ -1,5 +1,7 @@
-import blackHeadphone from "../assets/black-headphone.png";
-import "./Home.module.css";
+import blackHeadphone from "../assets/Bitmap.png";
+import HomeStyle from "./Home.module.css";
+import ShopProducts from "./ShoPProducts";
+import Button from "./Button";
 function HomeComponent() {
   return (
     <div>
@@ -45,8 +47,12 @@ function HomeComponent() {
           />
         </svg>
       </header>
-      <div className="home-page-product h-[600px]  bg-neutral-950 border-t-##FFF ">
-        <div className="product-description flex flex-col gap-[16px] justify-center items-center   ">
+      <div
+        className="home-page-product  border-t-##FFF bg-black "
+        id="homepage"
+      >
+        <img src={blackHeadphone} alt="" className="w-full" />
+        <div className="product-description flex flex-col gap-[16px]  justify-center items-center  absolute top-[15%]">
           <span className="text-[#FFF] text-center text-[14px]  tracking-[10px] opacity-50 mt-[108px]">
             NEW PRODUCT
           </span>
@@ -57,11 +63,10 @@ function HomeComponent() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="text-[#FFF] text-[13px] font-bold leading-[normal] tracking-[1px] bg-[#D87D4A;] px-[30px] py-[15px] mt-[14px]">
-            See Product
-          </button>
+          <Button />
         </div>
       </div>
+      <ShopProducts />
     </div>
   );
 }
