@@ -1,4 +1,4 @@
-function ShopBtn({ ShopItem }) {
+function ShopBtn() {
   return (
     <div>
       <div className="flex gap-[13px] mt-[17px] items-center">

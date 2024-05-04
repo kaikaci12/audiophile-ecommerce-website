@@ -1,7 +1,9 @@
 import blackHeadphone from "../assets/Bitmap.png";
-import HomeStyle from "./Home.module.css";
-import ShopProducts from "./ShoPProducts";
+import "./Home.module.css";
+import ShopProducts from "./ShopProductsComponent";
 import Button from "./Button";
+import ZX9Speaker from "./ZX9Speaker";
+import ZX7Speaker from "./ZX7Speaker";
 function HomeComponent() {
   return (
     <div>
@@ -66,7 +68,14 @@ function HomeComponent() {
           <Button />
         </div>
       </div>
-      <ShopProducts />
+      <div className="px-[24px]">
+        <ShopProducts />
+
+        <div className="flex flex-col gap-[24px]">
+          <ZX9Speaker />
+          <ZX7Speaker />
+        </div>
+      </div>
     </div>
   );
 }
