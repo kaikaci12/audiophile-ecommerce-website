@@ -20,15 +20,11 @@ const ShopItems = [
 
 function ShopProducts() {
   return (
-    <div className="flex flex-col gap-[64px] mt-[60px]">
+    <div className="flex flex-col gap-[64px] mt-[60px] ">
       {ShopItems.map((product, index) => (
         <div key={index}>
           <div className="product-to-shop h-[165px] w-full rounded-[8px] bg-[#F1F1F1] flex flex-col items-center justify-end pb-[22px]">
-            <img
-              src={product.image}
-              alt="shop-product"
-              className="justify-self-center "
-            />
+            <img src={product.image} alt="shop-product" className="" />
             <h3 className="text-[#000] text-center text-[15px] font-bold tracking-[1.071px]">
               {product.product}
             </h3>
