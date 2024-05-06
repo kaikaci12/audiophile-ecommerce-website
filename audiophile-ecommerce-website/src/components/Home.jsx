@@ -1,7 +1,7 @@
 import blackHeadphone from "../assets/Bitmap.png";
 import "./Home.module.css";
 import ShopProducts from "./ShopProductsComponent";
-import Button from "./Button";
+import Button from "./Directors/Button";
 import ZX9Speaker from "./ZX9Speaker";
 import ZX7Speaker from "./ZX7Speaker";
 import YX1Earphones from "./YX1Earphones";
@@ -9,6 +9,7 @@ import WebDescription from "./WebDescription";
 import AudioPhile from "./Directors/Audiophile";
 import ShoppingCart from "./Directors/ShoppingCart";
 import BurgerMenu from "./Directors/BurgerMenu";
+import Footer from "./Footer";
 function HomeComponent() {
   return (
     <div>
@@ -46,6 +47,7 @@ function HomeComponent() {
           <WebDescription />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

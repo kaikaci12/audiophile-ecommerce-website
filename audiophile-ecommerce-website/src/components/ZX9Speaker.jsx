@@ -1,5 +1,5 @@
 import SpeakerImage from "../assets/speakers.png";
-import Button from "./Button";
+import Button from "./Directors/Button";
 function ZX9Speaker() {
   return (
     <div className="w-full h-[600px] rounded-[8px] bg-[#D87D4A] flex flex-col justify-center items-center mt-[120px]">

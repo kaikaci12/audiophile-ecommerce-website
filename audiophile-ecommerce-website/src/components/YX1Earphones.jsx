@@ -1,5 +1,5 @@
 import YX1 from "../assets/YX1.png";
-import Button from "./Button";
+import Button from "./Directors/Button";
 export default function YX1Earphones() {
   return (
     <div className="flex flex-col gap-[24px] items-start justify-start">
