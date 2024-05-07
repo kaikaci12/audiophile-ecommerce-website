@@ -1,4 +1,4 @@
-import ManWithHeadphones from "../assets/ManWithHeadphones.png";
+import ManWithHeadphones from "./assets/ManWithHeadphones.png";
 export default function WebDescription() {
   return (
     <div className="flex flex-col gap-[40px] mt-[96px]">

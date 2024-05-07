@@ -1,23 +1,19 @@
-import blackHeadphone from "../assets/Bitmap.png";
-import "./Home.module.css";
-import ShopProducts from "./ShopProductsComponent";
-import Button from "./Directors/Button";
-import ZX9Speaker from "./ZX9Speaker";
-import ZX7Speaker from "./ZX7Speaker";
-import YX1Earphones from "./YX1Earphones";
-import WebDescription from "./WebDescription";
-import AudioPhile from "./Directors/Audiophile";
-import ShoppingCart from "./Directors/ShoppingCart";
-import BurgerMenu from "./Directors/BurgerMenu";
-import Footer from "./Footer";
+import blackHeadphone from "../assets/home/mobile/image-header.jpg";
+import ShopProducts from "../ShopProductsComponent";
+import Button from "../Directors/Button";
+import ZX9Speaker from "../ZX9Speaker";
+import ZX7Speaker from "../ZX7Speaker";
+import YX1Earphones from "../YX1Earphones";
+import WebDescription from "../WebDescription";
+import AudioPhile from "../Directors/Audiophile";
+import ShoppingCart from "../Directors/ShoppingCart";
+import BurgerMenu from "../Directors/BurgerMenu";
+import Footer from "../Footer";
+import Header from "../Header";
 function HomeComponent() {
   return (
     <div>
-      <header className="bg-neutral-950 flex justify-between  h-[89px] items-center px-[24px]">
-        <BurgerMenu />
-        <AudioPhile />
-        <ShoppingCart />
-      </header>
+      <Header />
       <div
         className="home-page-product  border-t-##FFF bg-black "
         id="homepage"

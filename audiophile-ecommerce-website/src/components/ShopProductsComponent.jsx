@@ -1,7 +1,7 @@
-import ShopHeadphone from "../assets/image-removebg-preview(41).png";
+import ShopHeadphone from "./assets/image-removebg-preview(41).png";
 import ShopBtn from "./ShopBtn";
-import Speakers from "../assets/speakers.png";
-import Earphones from "../assets/earphones.png";
+import Speakers from "./assets/speakers.png";
+import Earphones from "./assets/earphones.png";
 
 const ShopItems = [
   {
