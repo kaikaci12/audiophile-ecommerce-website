@@ -1,19 +1,15 @@
-import blackHeadphone from "../assets/home/mobile/image-header.jpg";
-import ShopProducts from "../ShopProductsComponent";
-import Button from "../Directors/Button";
-import ZX9Speaker from "../ZX9Speaker";
-import ZX7Speaker from "../ZX7Speaker";
-import YX1Earphones from "../YX1Earphones";
-import WebDescription from "../WebDescription";
-import AudioPhile from "../Directors/Audiophile";
-import ShoppingCart from "../Directors/ShoppingCart";
-import BurgerMenu from "../Directors/BurgerMenu";
-import Footer from "../Footer";
-import Header from "../Header";
+import blackHeadphone from "../components/assets/home/mobile/image-header.jpg";
+import ShopProducts from "../components/ShopProductsComponent";
+import Button from "../components/Directors/Button";
+import ZX9Speaker from "../components/ZX9Speaker";
+import ZX7Speaker from "../components/ZX7Speaker";
+import YX1Earphones from "../components/YX1Earphones";
+import WebDescription from "../components/WebDescription";
+import Footer from "../components/Footer";
+
 function HomeComponent() {
   return (
     <div>
-      <Header />
       <div
         className="home-page-product  border-t-##FFF bg-black "
         id="homepage"

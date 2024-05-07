@@ -5,13 +5,7 @@ export default function WebDescription() {
       <img src={ManWithHeadphones} alt="person" className="w-full " />
       <div className="flex flex-col gap-[32px] items-center justify-center">
         <h2 className="text-[#000] text-[28px]  text-center font-bold tracking-[1px] uppercase inline-block">
-          Bringing you the
-          {
-            <h2 className="text-[#D87D4A]  text-[28px] font-bold tracking-[1px] uppercase inline-flex">
-              best
-            </h2>
-          }
-          audio gear
+          Bringing you the best audio gear
         </h2>
         <p className="text-[#000] text-center text-[15px] font-normal leading-[25px] opacity-50">
           Located at the heart of New York City, Audiophile is the premier store
