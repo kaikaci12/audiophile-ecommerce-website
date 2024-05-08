@@ -1,4 +1,4 @@
-import ZX7 from "./assets/ZX7.png";
+import ZX7 from "../assets/ZX7.png";
 import Button from "./Directors/Button";
 
 function ZX7Speaker() {

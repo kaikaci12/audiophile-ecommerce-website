@@ -1,4 +1,4 @@
-import blackHeadphone from "../components/assets/home/mobile/image-header.jpg";
+import blackHeadphone from "../assets/home/mobile/image-header.jpg";
 import ShopProducts from "../components/ShopProductsComponent";
 import Button from "../components/Directors/Button";
 import ZX9Speaker from "../components/ZX9Speaker";
@@ -6,7 +6,7 @@ import ZX7Speaker from "../components/ZX7Speaker";
 import YX1Earphones from "../components/YX1Earphones";
 import WebDescription from "../components/WebDescription";
 import Footer from "../components/Footer";
-
+import NewProductSpan from "../components/NewProductSpan";
 function HomeComponent() {
   return (
     <div>
@@ -16,12 +16,10 @@ function HomeComponent() {
       >
         <img src={blackHeadphone} alt="" className="w-full" />
         <div className="product-description flex flex-col gap-[16px]  justify-center items-center  absolute top-[15%]">
-          <span className="text-[#FFF] text-center text-[14px]  tracking-[10px] opacity-50 mt-[108px]">
-            NEW PRODUCT
-          </span>
           <h1 className="text-[#FFF] text-[36px] font-bold leading-[40px] tracking-[1.286px] text-center">
             XX99 Mark II HeadphoneS
           </h1>
+          <NewProductSpan />
           <p className="text-center text text-[#FFF]  text-[15px] font-normal leading-[25px] opacity-75 mt-[10px]">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.

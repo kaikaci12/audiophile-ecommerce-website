@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "category": "headphones"
+  },
+  {
+    "id": 2,
+    "category": "speakers"
+  },
+  {
+    "id": 3,
+    "category": "earphones"
+  }
+]
