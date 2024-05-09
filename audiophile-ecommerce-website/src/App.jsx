@@ -12,16 +12,17 @@ function App() {
   return (
     <div>
       <Header />
-      <Routes>
-        <Route path="/" element={<HomeComponent />}></Route>
-        <Route path="/:products" element={<Products />}></Route>
-        <Route path="/:products/:slug" element={<SingleProduct />}></Route>
-      </Routes>
       <div className="px-[24px]">
+        <Routes>
+          <Route path="/" element={<HomeComponent />}></Route>
+          <Route path="/:products" element={<Products />}></Route>
+          <Route path="/:products/:slug" element={<SingleProduct />}></Route>
+        </Routes>
+
         <ShopProducts />
         <WebDescription />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
