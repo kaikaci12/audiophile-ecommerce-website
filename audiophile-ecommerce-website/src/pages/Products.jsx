@@ -4,15 +4,13 @@ import { useParams } from "react-router";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
 
-import { ProductImages } from "./imageData";
-
+import ProductImage from "../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
 export default function Products() {
   const params = useParams();
   const products = data.filter(
     (productObj) => productObj.category === params.products
   );
-  console.log(params);
-  console.log(ProductImages);
+  console.log(products);
 
   return (
     <div>
@@ -20,6 +18,7 @@ export default function Products() {
         <h2 className="text-center text-[#FFF]  text-[28px] font-bold leading-[normal] tracking-[2px] uppercase">
           {params.products}
         </h2>
+
         <NewProductSpan
           className={
             "text-[#D87D4A]  absolute opacity-1 left-2/4 -translate-x-[50%-50%]"
@@ -28,17 +27,14 @@ export default function Products() {
       </div>
       <div className="px-[24px]">
         {products.map((product, index) => {
-          const { mobile } = ProductImages[index];
           return (
             <div key={index} className="flex flex-col gap-[120px] mt-[64px]">
               <div className="flex flex-col gap-[24px] justify-center items-center">
                 <h2 className="text-[#000] text-center text-[28px] font-bold tracking-[1px]">
                   {product.name}
                 </h2>
-                <img
-                  src={`.${mobile}`} // Using the mobile image URL
-                  alt="product"
-                />
+                <img src="alt="" />
+                <img src={product.categoryImage.mobile} alt="product" />
                 <p className="text-[#000] text-center text-[15px] font-normal leading-[25px] opacity-50">
                   {product.description}
                 </p>

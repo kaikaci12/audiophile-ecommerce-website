@@ -1,7 +1,10 @@
 import { useParams } from "react-router";
 import data from "../data.json";
+
 import NewProductSpan from "../components/NewProductSpan";
 import AddToCart from "../components/AddToCart";
+import Gallery from "../components/Gallery";
+import ProductImages from "./imageData";
 export default function SingleProduct() {
   const singleProduct = useParams();
   console.log(singleProduct);
@@ -21,6 +24,7 @@ export default function SingleProduct() {
               <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px]">
                 {product.name}
               </h2>
+
               <p className="text-[#000] text-left text-[15px] font-normal leading-[25px] opacity-50">
                 {product.description}
               </p>
@@ -61,6 +65,11 @@ export default function SingleProduct() {
                   );
                 })}
               </ul>
+            </div>
+            <div className="flex flex-col gap-[20px] w-full justify-center items-center mt-[20%]">
+              <img src={product.gallery.first.mobile} alt="product" />
+              <img src={product.gallery.second.mobile} alt="product" />
+              <img src={product.gallery.third.mobile} alt="product" />
             </div>
           </div>
         );

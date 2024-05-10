@@ -1,4 +1,4 @@
-import SpeakerImage from "./assets/speakers.png";
+import SpeakerImage from "../../assets/home/mobile/image-speaker-zx9.png";
 import Button from "./Directors/Button";
 function ZX9Speaker() {
   return (
