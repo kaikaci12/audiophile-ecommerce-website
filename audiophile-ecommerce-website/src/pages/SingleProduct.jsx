@@ -11,13 +11,13 @@ export default function SingleProduct() {
   console.log(singleData);
 
   return (
-    <div>
+    <div className="px-[24px]">
       {singleData.map((product, index) => {
         return (
           <div key={index}>
             <img src={product.image.mobile} alt="" />
             <div className="flex flex-col gap-[24px]">
-              {product.new ? <NewProductSpan /> : null}
+              {product.new && <NewProductSpan />}
               <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px]">
                 {product.name}
               </h2>
@@ -44,15 +44,23 @@ export default function SingleProduct() {
                 {product.features.slice(400, product.features.length - 1)}
               </p>
             </div>
-            <div>
-              <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px] ">
+            <div className="flex flex-col gap-[24px] mt-[30%]">
+              <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px] uppercase ">
                 in the box
               </h2>
-              <div>
-                <ul>
-                  <li>{`${product.includes[0].quantity}X ${product.includes[0].item}`}</li>
-                </ul>
-              </div>
+
+              <ul>
+                {product.includes.map((item, index) => {
+                  return (
+                    <div className="flex gap-[16px]" key={index}>
+                      <li className="text-[#D87D4A] text-[15px] font-bold leading-[25px]">{`${item.quantity}x`}</li>
+                      <li className="text-[#000] text-[15px] font-normal leading-[25px] opacity-50">
+                        {item.item}
+                      </li>
+                    </div>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         );
