@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
 import data from "../data.json";
 import { useParams } from "react-router";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
-
+import { useState } from "react";
 import ProductImage from "../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
 export default function Products() {
   const params = useParams();
   const products = data.filter(
     (productObj) => productObj.category === params.products
   );
-  console.log(products);
+
+  console.log(params);
+  const [images, SetImages] = useState("");
 
   return (
     <div>
@@ -18,10 +19,9 @@ export default function Products() {
         <h2 className="text-center text-[#FFF]  text-[28px] font-bold leading-[normal] tracking-[2px] uppercase">
           {params.products}
         </h2>
-
         <NewProductSpan
           className={
-            "text-[#D87D4A]  absolute opacity-1 left-2/4 -translate-x-[50%-50%]"
+            "text-orange-600  opacity-100 w-full  flex absolute top-[60%] left-[30%] right-[30%]  text-center text-[14px] font-normal tracking-[10px] uppercase"
           }
         />
       </div>
@@ -30,15 +30,19 @@ export default function Products() {
           return (
             <div key={index} className="flex flex-col gap-[120px] mt-[64px]">
               <div className="flex flex-col gap-[24px] justify-center items-center">
-                <h2 className="text-[#000] text-center text-[28px] font-bold tracking-[1px]">
+                <h2 className="text-[#000] text-center text-[28px] font-bold tracking-[1px] mt-[20%] ">
                   {product.name}
                 </h2>
-                <img src="alt="" />
-                <img src={product.categoryImage.mobile} alt="product" />
+
+                <img src={images} alt="product" />
                 <p className="text-[#000] text-center text-[15px] font-normal leading-[25px] opacity-50">
                   {product.description}
                 </p>
-                <SeeProduct path={product.slug} key={index} />
+                <SeeProduct
+                  path={product.slug}
+                  key={index}
+                  previousRoot={product.category}
+                />
               </div>
             </div>
           );

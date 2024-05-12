@@ -1,6 +1,9 @@
 import YX1 from "../assets/home/mobile/image-earphones-yx1.jpg";
-import Button from "./Directors/Button";
+import SeeProduct from "./Directors/Button";
+
 export default function YX1Earphones() {
+  const path = "earphones";
+  const previousPath = "yx1-earphones";
   return (
     <div className="flex flex-col gap-[24px] items-start justify-start">
       <img src={YX1} alt="product" className="w-full " />
@@ -8,10 +11,12 @@ export default function YX1Earphones() {
         <h2 className="text-[#000] text-[28px] font-bold tracking-[2px]">
           YX1 EARPHONES
         </h2>
-        <Button
+        <SeeProduct
           className={
             "border-[1px] border-[solid] border-[#000] bg-transparent text-[black]"
           }
+          path={path}
+          previousRoot={previousPath}
         />
       </div>
     </div>

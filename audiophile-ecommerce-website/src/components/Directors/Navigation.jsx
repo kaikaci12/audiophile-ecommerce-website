@@ -12,8 +12,8 @@ export default function Navigation({ className }) {
             return (
               <li key={index}>
                 <Link
-                  to={`/${product.category}`}
-                  className="text-black  font-bold   uppercase cursor-pointer w-full "
+                  to={`${product.category}`}
+                  className="text-black  font-bold   uppercase cursor-pointer w-full"
                 >
                   {product.category}
                 </Link>

@@ -1,7 +1,9 @@
 import ZX7 from "../assets/home/mobile/image-speaker-zx7.jpg";
-import Button from "./Directors/Button";
+import SeeProduct from "./Directors/Button";
 
 function ZX7Speaker() {
+  const path = "zx7-speaker";
+  const previousRoot = "speakers";
   return (
     <div
       className="w-full h-[320px] rounded-[8px] bg-[#F1F1F1] bg-cover bg-center flex flex-col justify-center items-center"
@@ -16,10 +18,12 @@ function ZX7Speaker() {
           ZX7 SPEAKER
         </h2>
 
-        <Button
+        <SeeProduct
           className={
             "border-[1px] border-[solid] border-[#000] bg-transparent text-[black]"
           }
+          path={path}
+          previousRoot={previousRoot}
         />
       </div>
     </div>

@@ -1,12 +1,13 @@
 import blackHeadphone from "../assets/home/mobile/image-header.jpg";
 import ShopProducts from "../components/ShopProductsComponent";
-import Button from "../components/Directors/Button";
+import data from "../data.json";
 import ZX9Speaker from "../components/ZX9Speaker";
 import ZX7Speaker from "../components/ZX7Speaker";
 import YX1Earphones from "../components/YX1Earphones";
 import WebDescription from "../components/WebDescription";
 import Footer from "../components/Footer";
 import NewProductSpan from "../components/NewProductSpan";
+import SeeProduct from "../components/Directors/Button";
 function HomeComponent() {
   return (
     <div>
@@ -24,7 +25,7 @@ function HomeComponent() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button />
+          <SeeProduct previousRoot={data[2].category} path={data[2].slug} />
         </div>
       </div>
       <div className="px-[24px]">

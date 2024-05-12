@@ -1,6 +1,8 @@
 import SpeakerImage from "../assets/speakers.png";
-import Button from "./Directors/Button";
+import SeeProduct from "./Directors/Button";
 function ZX9Speaker() {
+  const path = "speakers";
+  const previousRoot = "zx9-speaker";
   return (
     <div className="w-full h-[600px] rounded-[8px] bg-[#D87D4A] flex flex-col justify-center items-center mt-[120px]">
       <div className="rounded-[320px] border-[1px] border-[solid] border-[#FFF]"></div>
@@ -19,7 +21,11 @@ function ZX9Speaker() {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Button className={"text-[#FFF] bg-[#000]"} />
+        <SeeProduct
+          className={"text-[#FFF] bg-[#000]"}
+          path={path}
+          previousRoot={previousRoot}
+        />
       </div>
     </div>
   );

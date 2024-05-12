@@ -2,19 +2,19 @@ import ShopHeadphone from "../assets/image-removebg-preview(41).png";
 import ShopBtn from "./ShopBtn";
 import Speakers from "../assets/speakers.png";
 import Earphones from "../assets/earphones.png";
-
+import { Link } from "react-router-dom";
 const ShopItems = [
   {
     image: ShopHeadphone,
-    product: "HEADPHONES",
+    product: "headphones",
   },
   {
     image: Speakers,
-    product: "SPEAKERS",
+    product: "speakers",
   },
   {
     image: Earphones,
-    product: "EARPHONES",
+    product: "earphones",
   },
 ];
 
@@ -25,10 +25,11 @@ function ShopProducts() {
         <div key={index}>
           <div className="product-to-shop h-[165px] w-full rounded-[8px] bg-[#F1F1F1] flex flex-col items-center justify-end pb-[22px]">
             <img src={product.image} alt="shop-product" className="" />
-            <h3 className="text-[#000] text-center text-[15px] font-bold tracking-[1.071px]">
+            <h3 className="text-[#000] text-center text-[15px] font-bold tracking-[1.071px] uppercase">
               {product.product}
             </h3>
-            <ShopBtn />
+
+            <ShopBtn path={product.product} />
           </div>
         </div>
       ))}
