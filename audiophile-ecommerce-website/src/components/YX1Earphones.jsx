@@ -1,4 +1,4 @@
-import YX1 from "../assets/home/mobile/image-earphones-yx1.jpg";
+import YX1 from "/assets/home/mobile/image-earphones-yx1.jpg";
 import SeeProduct from "./Directors/Button";
 
 export default function YX1Earphones() {

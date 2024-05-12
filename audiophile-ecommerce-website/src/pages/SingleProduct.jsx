@@ -23,7 +23,6 @@ export default function SingleProduct() {
       {singleData.map((product, index) => {
         return (
           <div key={index}>
-            <img src={product.image.mobile} alt="" />
             <div className="flex flex-col gap-[24px]">
               {product.new && (
                 <NewProductSpan
@@ -33,7 +32,7 @@ export default function SingleProduct() {
               <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px]">
                 {product.name}
               </h2>
-              <img src={product.image.mobile} alt="product" />
+              <img src={product.image.mobile} alt="" />
               <p className="text-[#000] text-left text-[15px] font-normal leading-[25px] opacity-50">
                 {product.description}
               </p>

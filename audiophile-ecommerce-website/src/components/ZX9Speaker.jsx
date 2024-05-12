@@ -1,4 +1,4 @@
-import SpeakerImage from "../assets/speakers.png";
+import SpeakerImage from "/assets/speakers.png";
 import SeeProduct from "./Directors/Button";
 function ZX9Speaker() {
   const path = "speakers";

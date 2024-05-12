@@ -1,4 +1,4 @@
-import blackHeadphone from "../assets/home/mobile/image-header.jpg";
+import blackHeadphone from "/assets/home/mobile/image-header.jpg";
 import ShopProducts from "../components/ShopProductsComponent";
 import data from "../data.json";
 import ZX9Speaker from "../components/ZX9Speaker";

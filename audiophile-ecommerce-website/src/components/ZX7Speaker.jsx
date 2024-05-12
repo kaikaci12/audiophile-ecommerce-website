@@ -1,4 +1,4 @@
-import ZX7 from "../assets/home/mobile/image-speaker-zx7.jpg";
+import ZX7 from "/assets/home/mobile/image-speaker-zx7.jpg";
 import SeeProduct from "./Directors/Button";
 
 function ZX7Speaker() {

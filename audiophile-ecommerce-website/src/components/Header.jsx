@@ -3,6 +3,7 @@ import Navigation from "./Directors/Navigation";
 import BurgerMenu from "./Directors/BurgerMenu";
 import AudiophileLogo from "./Directors/Audiophile";
 import ShoppingCart from "./Directors/ShoppingCart";
+
 export default function Header() {
   const [navActive, setNavActive] = useState(false);
 

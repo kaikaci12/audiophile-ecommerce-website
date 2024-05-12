@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
 import { useState } from "react";
-import ProductImage from "../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
+
 export default function Products() {
   const params = useParams();
   const products = data.filter(
@@ -34,7 +34,7 @@ export default function Products() {
                   {product.name}
                 </h2>
 
-                <img src={images} alt="product" />
+                <img src={product.categoryImage.mobile} alt="product" />
                 <p className="text-[#000] text-center text-[15px] font-normal leading-[25px] opacity-50">
                   {product.description}
                 </p>
