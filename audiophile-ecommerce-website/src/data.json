@@ -96,9 +96,9 @@
     "slug": "xx59-headphones",
     "name": "XX59 Headphones",
     "image": {
-      "mobile": "./assets/product-xx59-headphones/mobile/image-product.jpg",
-      "tablet": "./assets/product-xx59-headphones/tablet/image-product.jpg",
-      "desktop": "./assets/product-xx59-headphones/desktop/image-product.jpg"
+      "mobile": "/assets/product-xx59-headphones/mobile/image-product.jpg",
+      "tablet": "/assets/product-xx59-headphones/tablet/image-product.jpg",
+      "desktop": "/assets/product-xx59-headphones/desktop/image-product.jpg"
     },
     "category": "headphones",
     "categoryImage": {

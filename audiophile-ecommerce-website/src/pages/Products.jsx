@@ -11,7 +11,6 @@ export default function Products() {
   );
 
   console.log(params);
-  const [images, SetImages] = useState("");
 
   return (
     <div>
@@ -20,17 +19,16 @@ export default function Products() {
           {params.products}
         </h2>
         <NewProductSpan
-          className={
-            "text-orange-600  opacity-100 w-full  flex absolute top-[60%] left-[30%] right-[30%]  text-center text-[14px] font-normal tracking-[10px] uppercase"
-          }
+          className={" flex absolute w-full justify-center top-[100%]"}
+          spanStyes={""}
         />
       </div>
       <div className="px-[24px]">
         {products.map((product, index) => {
           return (
-            <div key={index} className="flex flex-col gap-[120px] mt-[64px]">
+            <div key={index} className="flex flex-col gap-[120px] ">
               <div className="flex flex-col gap-[24px] justify-center items-center">
-                <h2 className="text-[#000] text-center text-[28px] font-bold tracking-[1px] mt-[20%] ">
+                <h2 className="text-[#000] text-center text-[28px] font-bold tracking-[1px] mt-[20%]">
                   {product.name}
                 </h2>
 

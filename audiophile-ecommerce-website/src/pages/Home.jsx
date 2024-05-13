@@ -8,6 +8,7 @@ import WebDescription from "../components/WebDescription";
 import Footer from "../components/Footer";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
+
 function HomeComponent() {
   return (
     <div>

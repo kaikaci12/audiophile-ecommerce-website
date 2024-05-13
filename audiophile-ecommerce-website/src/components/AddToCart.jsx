@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function AddToCart() {
+export default function AddToCart({ product, setCartActive, cartActive }) {
   return (
     <div>
       <button className="text-[#FFF] text-center text-[13px] font-bold tracking-[1px] h-[48px] w-full bg-[#D87D4A] py-[15px] px-[30px]">

@@ -8,10 +8,12 @@ import SingleProduct from "./pages/SingleProduct";
 import ShopProducts from "./components/ShopProductsComponent";
 import WebDescription from "./components/WebDescription";
 import Footer from "./components/Footer";
+import Cart from "./components/Cart";
 function App() {
   return (
     <div>
       <Header />
+      <Cart />
       <div>
         <Routes>
           <Route path="/" element={<HomeComponent />}></Route>
