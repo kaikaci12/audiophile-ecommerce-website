@@ -8,9 +8,7 @@ import ProductImages from "./imageData";
 import SeeProduct from "../components/Directors/Button";
 import GoBack from "../components/GoBack";
 import { useState } from "react";
-export default function SingleProduct() {
-  const [cartActive, setCartActive] = useState(false);
-
+export default function SingleProduct({ handleAddProduct }) {
   const singleProduct = useParams();
   console.log(singleProduct);
   const singleData = data.filter((productObj) => {
@@ -44,11 +42,9 @@ export default function SingleProduct() {
                 <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] h-[48px] bg-[#F1F1F1] px-[50px] py-[15px] ">
                   1
                 </button>
-                <AddToCart
-                  product={product}
-                  cartActive={cartActive}
-                  setCartActive={setCartActive}
-                />
+                <div onClick={handleAddProduct(product)}>
+                  <AddToCart />
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-[24px] mt-[40%]">
