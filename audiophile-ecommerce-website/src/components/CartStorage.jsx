@@ -8,12 +8,41 @@ export default function CartStorage({ cartItems }) {
         <h2 className="text-[#000] text-[18px] font-bold tracking-[1.286px] uppercase">
           Cart()
         </h2>
+
         <span className="text-[#000] text-[15px] font-normal leading-[25px] opacity-50 underline cursor-pointer">
           Remove all
         </span>
       </div>
-      <div>
-        products
+      <div className="flex flex-col gap-[24px] w-full items-center justify-center">
+        {cartItems.map((item, index) => {
+          return (
+            <div key={index} className="h-[64px] w-full flex gap-[16px] ">
+              <img
+                src={item.image.mobile}
+                alt="cartitem"
+                className="w-[64px] h-[64px] rounded-[8px] bg-[#F1F1F1]"
+              />
+              <div className="flex flex-col gap-[0px]">
+                <span className="text-[#000] text-[15px] font-bold leading-[25px] inline-flex">
+                  {item.name}
+                </span>
+                <span className="text-[#000] text-[14px] font-bold leading-[25px] inline-flex opacity-50">
+                  {`$${item.price}`}
+                </span>
+              </div>
+              <div className="flex  h-[32px] bg-[#F1F1F1] items-center  text-[#000] text-center text-[13px] font-bold tracking-[1px] justify-between px-[11.5px] gap-[12px]">
+                <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer">
+                  -
+                </button>
+                {item.quantity}
+                <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer">
+                  +
+                </button>
+              </div>
+            </div>
+          );
+        })}
+
         {cartItems.length === 0 && <h3>no Items Added</h3>}
       </div>
       <div className="w-full flex justify-between">

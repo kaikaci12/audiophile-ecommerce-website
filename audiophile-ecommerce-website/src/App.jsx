@@ -9,13 +9,13 @@ import ShopProducts from "./components/ShopProductsComponent";
 import WebDescription from "./components/WebDescription";
 import Footer from "./components/Footer";
 import ShoppingCart from "./components/Directors/ShoppingCart";
-import data from "./data.json";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function handleAddProduct(product) {
-    const productExist = data.find((item) => item.id === product.id);
+    const productExist = cartItems.find((item) => item.id === product.id);
+
     if (productExist) {
       setCartItems(
         cartItems.map((item) =>
