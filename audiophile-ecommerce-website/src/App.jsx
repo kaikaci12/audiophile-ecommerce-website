@@ -52,20 +52,13 @@ function App() {
   }
   const [cartActive, setCartActive] = useState(false);
 
-  function isCartActive(isActive) {
-    setCartActive(!cartActive);
+  function handleCartActive(isActive) {
+    setCartActive(!isActive);
   }
   return (
     <div>
-      <div>
-        <Header
-          cartItems={cartItems}
-          handleRemoveAll={handleRemoveAll}
-          handleAddProduct={handleAddProduct}
-          cartItmQuant={cartItmQuant}
-          handleRemoveProduct={handleRemoveProduct}
-          cartActive={cartActive}
-        />
+      <Header cartActive={cartActive} handleCartActive={handleCartActive} />
+      {cartActive && (
         <CartStorage
           cartItems={cartItems}
           handleRemoveAll={handleRemoveAll}
@@ -73,7 +66,7 @@ function App() {
           cartItmQuant={cartItmQuant}
           handleRemoveProduct={handleRemoveProduct}
         />
-      </div>
+      )}
 
       <div>
         <Routes>
