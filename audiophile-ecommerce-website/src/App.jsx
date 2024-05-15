@@ -9,7 +9,7 @@ import ShopProducts from "./components/ShopProductsComponent";
 import WebDescription from "./components/WebDescription";
 import Footer from "./components/Footer";
 import ShoppingCart from "./components/Directors/ShoppingCart";
-
+import CartStorage from "./components/CartStorage";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartItmQuant, setCartItmQuant] = useState(1);
@@ -50,11 +50,23 @@ function App() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   }
+  const [cartActive, setCartActive] = useState(false);
 
+  function isCartActive(isActive) {
+    setCartActive(!cartActive);
+  }
   return (
     <div>
       <div>
         <Header
+          cartItems={cartItems}
+          handleRemoveAll={handleRemoveAll}
+          handleAddProduct={handleAddProduct}
+          cartItmQuant={cartItmQuant}
+          handleRemoveProduct={handleRemoveProduct}
+          cartActive={cartActive}
+        />
+        <CartStorage
           cartItems={cartItems}
           handleRemoveAll={handleRemoveAll}
           handleAddProduct={handleAddProduct}

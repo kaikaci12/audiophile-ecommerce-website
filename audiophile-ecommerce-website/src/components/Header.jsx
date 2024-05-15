@@ -12,9 +12,10 @@ export default function Header({
   cartItmQuant,
   handleDecreaseQuantity,
   handleRemoveProduct,
+  cartActive,
+  handleCartActive,
 }) {
   const [navActive, setNavActive] = useState(false);
-  const [cartActive, setCartActive] = useState(false);
 
   return (
     <header className="bg-neutral-950 flex justify-between  h-[89px] items-center px-[24px]">
@@ -27,18 +28,9 @@ export default function Header({
         </div>
       ) : null}
       <AudiophileLogo />
-      <div onClick={() => setCartActive(!cartActive)}>
+      <div onClick={() => handleCartActive(cartActive)}>
         <ShoppingCart />
       </div>
-      {cartActive ? (
-        <CartStorage
-          cartItems={cartItems}
-          handleRemoveAll={handleRemoveAll}
-          handleAddProduct={handleAddProduct}
-          cartItmQuant={cartItmQuant}
-          handleRemoveProduct={handleRemoveProduct}
-        />
-      ) : null}
     </header>
   );
 }
