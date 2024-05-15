@@ -28,8 +28,11 @@ export default function Header({
         </div>
       ) : null}
       <AudiophileLogo />
-      <div onClick={() => handleCartActive(cartActive)}>
-        <ShoppingCart />
+      <div
+        onClick={() => handleCartActive(cartActive)}
+        className="cursor-pointer"
+      >
+        <ShoppingCart cartItems={cartItems} />
       </div>
     </header>
   );

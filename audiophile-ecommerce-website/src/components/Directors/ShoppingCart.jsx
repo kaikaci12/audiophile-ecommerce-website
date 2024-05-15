@@ -1,6 +1,12 @@
-export default function ShoppingCart() {
+export default function ShoppingCart({ cartItems }) {
   return (
     <div>
+      {cartItems.length > 0 && (
+        <div className="w-[15px] h-[15px] bg-[rgb(255,0,0)] rounded-[50%]  sticky mt-[10px] text-[white] font-bold text-center flex justify-center items-center text-[10px]">
+          <span>{cartItems.length}</span>
+        </div>
+      )}
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="23"

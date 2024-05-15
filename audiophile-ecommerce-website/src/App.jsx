@@ -57,7 +57,12 @@ function App() {
   }
   return (
     <div>
-      <Header cartActive={cartActive} handleCartActive={handleCartActive} />
+      <Header
+        cartActive={cartActive}
+        handleCartActive={handleCartActive}
+        cartItems={cartItems}
+      />
+
       {cartActive && (
         <CartStorage
           cartItems={cartItems}

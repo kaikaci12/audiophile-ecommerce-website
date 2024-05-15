@@ -14,7 +14,7 @@ export default function CartStorage({
   );
 
   return (
-    <div className=" fixed  h-full w-full px-[24px] bg-black bg-opacity-40 overflow-hidden">
+    <div className="absolute h-screen w-screen px-[24px] bg-black bg-opacity-40 overflow-hidden">
       <div className=" rounded-[8px] bg-[#FFF]  px-[28px] py-[31px] z-[99] top-[100px] flex flex-col gap-[30px] opacity-100">
         <div className="flex w-full justify-between">
           <h2 className="text-[#000] text-[18px] font-bold tracking-[1.286px] uppercase">
