@@ -12,7 +12,26 @@ import ShoppingCart from "./components/Directors/ShoppingCart";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartItmQuant, setCartItmQuant] = useState(1);
 
+  function handleRemoveAll() {
+    setCartItems([]);
+    setCartItmQuant(1);
+  }
+
+  function handleRemoveProduct(product) {
+    const productExist = cartItems.find((item) => item.id === product.id);
+    if (productExist.quantity > 1) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id
+            ? { ...productExist, quantity: productExist.quantity - 1 }
+            : item
+        )
+      );
+    } else {
+    }
+  }
   function handleAddProduct(product) {
     const productExist = cartItems.find((item) => item.id === product.id);
 
@@ -31,11 +50,17 @@ function App() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   }
-  console.log(cartItems);
+
   return (
     <div>
       <div>
-        <Header cartItems={cartItems} />
+        <Header
+          cartItems={cartItems}
+          handleRemoveAll={handleRemoveAll}
+          handleAddProduct={handleAddProduct}
+          cartItmQuant={cartItmQuant}
+          handleRemoveProduct={handleRemoveProduct}
+        />
       </div>
 
       <div>

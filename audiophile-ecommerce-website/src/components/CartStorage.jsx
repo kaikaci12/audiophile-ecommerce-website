@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import data from "../data.json";
 
-export default function CartStorage({ cartItems }) {
+export default function CartStorage({
+  cartItems,
+  handleRemoveAll,
+  handleAddProduct,
+  kuwu,
+  handleRemoveProduct,
+}) {
   return (
-    <div className=" rounded-[8px] bg-[#FFF] fixed px-[28px] py-[31px] z-[99] top-[100px]">
+    <div className=" rounded-[8px] bg-[#FFF] fixed px-[28px] py-[31px] z-[99] top-[100px] flex flex-col gap-[30px]">
       <div className="flex w-full justify-between">
         <h2 className="text-[#000] text-[18px] font-bold tracking-[1.286px] uppercase">
-          Cart()
+          Cart({cartItems.length})
         </h2>
 
-        <span className="text-[#000] text-[15px] font-normal leading-[25px] opacity-50 underline cursor-pointer">
+        <button
+          onClick={() => handleRemoveAll()}
+          className="text-[#000] text-[15px] font-normal leading-[25px] opacity-50 underline cursor-pointer h-[2px]"
+        >
           Remove all
-        </span>
+        </button>
       </div>
-      <div className="flex flex-col gap-[24px] w-full items-center justify-center">
+      <div className="flex flex-col gap-[24px] w-full items-center justify-center ">
         {cartItems.map((item, index) => {
+          const totalPrice = cartItems.reduce(
+            (item, price) => price + item.quantity * item.price,
+            0
+          );
           return (
-            <div key={index} className="h-[64px] w-full flex gap-[16px] ">
+            <div
+              key={index}
+              className="h-[64px] w-full flex gap-[16px] justify-between"
+            >
               <img
                 src={item.image.mobile}
                 alt="cartitem"
@@ -27,15 +43,21 @@ export default function CartStorage({ cartItems }) {
                   {item.name}
                 </span>
                 <span className="text-[#000] text-[14px] font-bold leading-[25px] inline-flex opacity-50">
-                  {`$${item.price}`}
+                  {`$${item.price * item.quantity}`}
                 </span>
               </div>
               <div className="flex  h-[32px] bg-[#F1F1F1] items-center  text-[#000] text-center text-[13px] font-bold tracking-[1px] justify-between px-[11.5px] gap-[12px]">
-                <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer">
+                <button
+                  onClick={() => handleRemoveProduct(item)}
+                  className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer"
+                >
                   -
                 </button>
                 {item.quantity}
-                <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer">
+                <button
+                  onClick={() => handleAddProduct(item)}
+                  className="text-[#000] text-center text-[13px] font-bold tracking-[1px] uppercase opacity-25 cursor-pointer"
+                >
                   +
                 </button>
               </div>
@@ -43,14 +65,16 @@ export default function CartStorage({ cartItems }) {
           );
         })}
 
-        {cartItems.length === 0 && <h3>no Items Added</h3>}
+        {cartItems.length === 0 && (
+          <h3 className="text-black font-bold text-[30px]">no Items Added</h3>
+        )}
       </div>
       <div className="w-full flex justify-between">
         <span className="text-[#000] font-[Manrope] text-[15px] font-normal leading-[25px] uppercase opacity-50">
           total
         </span>
         <span className="text-[#000] text-center text-[18px] font-bold uppercase">
-          totalPrice
+          {totalPrice}
         </span>
       </div>
       <button className="text-[#FFF] text-center text-[13px] font-bold leading-[normal] tracking-[1px] uppercase w-full px-[52px] py-[15px] h-[48px] bg-[#D87D4A] cursor-pointer">

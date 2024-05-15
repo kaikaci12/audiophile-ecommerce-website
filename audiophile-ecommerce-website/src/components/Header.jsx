@@ -4,7 +4,15 @@ import BurgerMenu from "./Directors/BurgerMenu";
 import AudiophileLogo from "./Directors/Audiophile";
 import ShoppingCart from "./Directors/ShoppingCart";
 import CartStorage from "./CartStorage";
-export default function Header({ cartItems }) {
+export default function Header({
+  cartItems,
+  handleRemoveAll,
+  handleAddProduct,
+  handleAddQuantity,
+  cartItmQuant,
+  handleDecreaseQuantity,
+  handleRemoveProduct,
+}) {
   const [navActive, setNavActive] = useState(false);
   const [cartActive, setCartActive] = useState(false);
 
@@ -22,7 +30,15 @@ export default function Header({ cartItems }) {
       <div onClick={() => setCartActive(!cartActive)}>
         <ShoppingCart />
       </div>
-      {cartActive ? <CartStorage cartItems={cartItems} /> : null}
+      {cartActive ? (
+        <CartStorage
+          cartItems={cartItems}
+          handleRemoveAll={handleRemoveAll}
+          handleAddProduct={handleAddProduct}
+          cartItmQuant={cartItmQuant}
+          handleRemoveProduct={handleRemoveProduct}
+        />
+      ) : null}
     </header>
   );
 }
