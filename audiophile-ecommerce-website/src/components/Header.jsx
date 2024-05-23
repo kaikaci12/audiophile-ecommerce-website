@@ -6,12 +6,7 @@ import ShoppingCart from "./Directors/ShoppingCart";
 import CartStorage from "./CartStorage";
 export default function Header({
   cartItems,
-  handleRemoveAll,
-  handleAddProduct,
-  handleAddQuantity,
-  cartItmQuant,
-  handleDecreaseQuantity,
-  handleRemoveProduct,
+
   cartActive,
   handleCartActive,
 }) {
@@ -24,7 +19,12 @@ export default function Header({
       </div>
       {navActive ? (
         <div className="absolute top-[100px]">
-          <Navigation />;
+          <Navigation
+            className={
+              "bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm pointer-events-auto w-[400px] h-[300px] px-[30px] py-[20px] transition-transform transform"
+            }
+          />
+          ;
         </div>
       ) : null}
       <AudiophileLogo />
