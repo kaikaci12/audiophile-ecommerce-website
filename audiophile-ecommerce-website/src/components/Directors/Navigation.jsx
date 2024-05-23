@@ -13,20 +13,20 @@ export default function Navigation({ className }) {
   }, []);
   return (
     <div
-      className={`relative z-40 ${className}   ${
+      className={`relative z-40 ${className} lg:flex  ${
         isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       } duration-500 ease-in-out`}
     >
-      <nav>
-        <ul className="flex flex-col gap-[30px] items-start justify-center">
-          <li className="text-white font-bold leading-[25px] no-underline uppercase cursor-pointer">
+      <nav className="">
+        <ul className="flex flex-col gap-[30px] items-start justify-center lg:flex-row">
+          <li className="text-white font-bold leading-[25px] no-underline uppercase cursor-pointer hover:text-orange-500">
             <Link to="/">Home</Link>
           </li>
           {NavData.map((product, index) => (
             <li key={index}>
               <Link
                 to={`${product.category}`}
-                className="text-white font-bold uppercase cursor-pointer w-full"
+                className="text-white font-bold uppercase cursor-pointer w-full hover:text-orange-500"
               >
                 {product.category}
               </Link>
