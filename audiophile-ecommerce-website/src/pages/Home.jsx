@@ -8,15 +8,43 @@ import WebDescription from "../components/WebDescription";
 import Footer from "../components/Footer";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
+import HeaderTablet from "/assets/home/tablet/image-header.jpg";
+import HeaderDesktop from "/assets/home/desktop/image-hero.jpg";
+import { useState, useEffect } from "react";
 
 function HomeComponent() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  function handleHeaderSrc() {
+    if (windowWidth < 640) {
+      return blackHeadphone;
+    }
+    if (windowWidth < 1024 && windowWidth > 640) {
+      return HeaderTablet;
+    } else {
+      return HeaderDesktop;
+    }
+  }
+
+  useEffect(() => {});
   return (
     <div>
       <div
-        className="home-page-product  border-t-##FFF bg-black "
+        className="home-page-product  border-t-##FFF bg-black 
+        
+        "
         id="homepage"
       >
-        <img src={blackHeadphone} alt="" className="w-full" />
+        <img src={handleHeaderSrc()} alt="" className="w-full" />
         <div className="product-description flex flex-col gap-[16px]  justify-center items-center  absolute top-[15%]">
           <h1 className="text-[#FFF] text-[36px] font-bold leading-[40px] tracking-[1.286px] text-center">
             XX99 Mark II HeadphoneS
