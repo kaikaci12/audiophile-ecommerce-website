@@ -13,12 +13,14 @@ export default function Navigation({ className }) {
   }, []);
   return (
     <div
-      className={`relative z-40 ${className} lg:flex  ${
+      className={`relative z-40    ${
         isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       } duration-500 ease-in-out`}
     >
       <nav className="">
-        <ul className="flex flex-col gap-[30px] items-start justify-center lg:flex-row">
+        <ul
+          className={`flex flex-col gap-[30px] items-start justify-center ${className} lg:flex-row`}
+        >
           <li className="text-white font-bold leading-[25px] no-underline uppercase cursor-pointer hover:text-orange-500">
             <Link to="/">Home</Link>
           </li>
