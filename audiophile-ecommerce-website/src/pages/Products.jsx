@@ -62,7 +62,7 @@ export default function Products() {
                   <p className="text-[#000]  lg:text-start text-center text-[15px] font-normal leading-[25px] opacity-50">
                     {product.description}
                   </p>
-                  <div className="flex self-start">
+                  <div className="flex lg:self-start">
                     <SeeProduct
                       path={product.slug}
                       key={index}
