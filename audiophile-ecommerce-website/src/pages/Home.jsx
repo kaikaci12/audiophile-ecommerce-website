@@ -35,7 +35,6 @@ function HomeComponent() {
     }
   }
 
-  useEffect(() => {});
   return (
     <div>
       <div
@@ -63,7 +62,7 @@ function HomeComponent() {
           <SeeProduct previousRoot={data[2].category} path={data[2].slug} />
         </div>
       </div>
-      <div className="px-[24px]">
+      <div className="px-[24px] lg:px-[100px] ">
         <ShopProducts />
 
         <div className="flex flex-col gap-[24px]">
