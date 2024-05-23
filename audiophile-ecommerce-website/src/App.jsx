@@ -84,7 +84,6 @@ function App() {
           ></Route>
         </Routes>
         <div className="px-[24px]">
-          <ShopProducts />
           <WebDescription />
         </div>
       </div>

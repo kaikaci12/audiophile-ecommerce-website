@@ -69,10 +69,8 @@ function HomeComponent() {
           <ZX9Speaker />
           <ZX7Speaker />
           <YX1Earphones />
-          <WebDescription />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
