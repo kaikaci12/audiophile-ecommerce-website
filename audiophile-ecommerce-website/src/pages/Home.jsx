@@ -25,10 +25,10 @@ function HomeComponent() {
   }, []);
 
   function handleHeaderSrc() {
-    if (windowWidth < 640) {
+    if (windowWidth < 500) {
       return blackHeadphone;
     }
-    if (windowWidth < 1024 && windowWidth > 640) {
+    if (windowWidth < 1024 && windowWidth > 500) {
       return HeaderTablet;
     } else {
       return HeaderDesktop;
@@ -40,17 +40,23 @@ function HomeComponent() {
     <div>
       <div
         className="home-page-product  border-t-##FFF bg-black 
-        
+        w-full flex justify-center items-center lg:justify-start 
         "
         id="homepage"
       >
-        <img src={handleHeaderSrc()} alt="" className="w-full" />
-        <div className="product-description flex flex-col gap-[16px]  justify-center items-center  absolute top-[15%]">
-          <h1 className="text-[#FFF] text-[36px] font-bold leading-[40px] tracking-[1.286px] text-center">
+        <div className="flex flex-col items-center w-full justify-center ">
+          <img src={handleHeaderSrc()} alt="" className="w-full " />
+        </div>
+        <div className="product-description lg:items-start lg:left-[168px]  flex flex-col gap-[16px] sm:gap-[20px] lg:text-start  justify-center items-center absolute   sm:max-w-[400px] sm:top-[300px]   ">
+          <NewProductSpan
+            className={"text-white text-center opacity-40 bg-transparent "}
+          />
+
+          <h1 className="text-[#FFF] lg:text-start  text-[36px] font-bold leading-[40px] tracking-[1.286px] text-center sm:text-[56px] sm:tracking-[2px] sm:leading-[58px]">
             XX99 Mark II HeadphoneS
           </h1>
-          <NewProductSpan />
-          <p className="text-center text text-[#FFF]  text-[15px] font-normal leading-[25px] opacity-75 mt-[10px]">
+
+          <p className="text-center lg:text-start  text-[#FFF]  text-[15px] font-normal leading-[25px] opacity-75 mt-[10px]">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
