@@ -89,7 +89,7 @@ function App() {
           />
         </Routes>
         <div className="px-[24px]">
-          {location.pathname !== "/checkout" && <WebDescription />}
+          s{location.pathname !== "/products/checkout" && <WebDescription s />}
         </div>
       </div>
       <Routes>
