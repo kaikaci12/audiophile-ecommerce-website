@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "../data.json";
+import { Link } from "react-router-dom";
 
 export default function CartStorage({
   cartItems,
@@ -15,7 +16,7 @@ export default function CartStorage({
 
   return (
     <div
-      className={`fixed h-full w-full px-[24px] bg-black bg-opacity-40 z-[999] sm:flex sm:flex-col sm:items-end  ${
+      className={`fixed h-full w-full px-[24px] lg:px-[165px] bg-black bg-opacity-40 z-[999] sm:flex sm:flex-col sm:items-end  ${
         cartActive ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       }`}
     >
@@ -86,9 +87,11 @@ export default function CartStorage({
             {`$${totalPrice}`}
           </span>
         </div>
-        <button className="text-[#FFF] text-center text-[13px] font-bold leading-[normal] tracking-[1px] uppercase w-full px-[52px] py-[15px] h-[48px] bg-[#D87D4A] cursor-pointer">
-          checkout
-        </button>
+        <Link to={"/checkout"}>
+          <button className="text-[#FFF] text-center text-[13px] font-bold leading-[normal] tracking-[1px] uppercase w-full px-[52px] py-[15px] h-[48px] bg-[#D87D4A] cursor-pointer">
+            checkout
+          </button>
+        </Link>
       </div>
     </div>
   );

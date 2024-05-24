@@ -10,6 +10,8 @@ import WebDescription from "./components/WebDescription";
 import Footer from "./components/Footer";
 import ShoppingCart from "./components/Directors/ShoppingCart";
 import CartStorage from "./components/CartStorage";
+import Checkout from "./components/Checkout";
+import { useLocation } from "react-router";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartItmQuant, setCartItmQuant] = useState(1);
@@ -56,6 +58,7 @@ function App() {
   function handleCartActive(isActive) {
     setCartActive(!isActive);
   }
+  const location = useLocation();
   return (
     <div>
       <Header
@@ -77,18 +80,21 @@ function App() {
 
       <div>
         <Routes>
-          <Route path="/" element={<HomeComponent />}></Route>
-          <Route path="/:products" element={<Products />}></Route>
+          <Route path="/" element={<HomeComponent />} />
+          <Route path="/:products" element={<Products />} />
 
           <Route
             path="/:products/:slug"
             element={<SingleProduct handleAddProduct={handleAddProduct} />}
-          ></Route>
+          />
         </Routes>
         <div className="px-[24px]">
-          <WebDescription />
+          {location.pathname !== "/checkout" && <WebDescription />}
         </div>
       </div>
+      <Routes>
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
       <Footer />
     </div>
   );
