@@ -17,9 +17,8 @@ export default function Checkout({ cartItems }) {
     );
   }
   return (
-    <div className="bg-[#FAFAFA]  px-[24px] lg:px-[165px] lg:flex lg:gap-[30px] justify-center    ">
-      <GoBack />
-      <div className="bg-white mt-[65px] p-[24px] rounded-[8px] ">
+    <div className="bg-[#FAFAFA]  px-[24px] lg:p-[165px] lg:flex lg:gap-[30px]  lg:justify-center   ">
+      <div className="bg-white  p-[24px] rounded-[8px] lg:w-[60%]">
         <div className="flex flex-col gap-[32px] ">
           <h2 className="text-[#000] text-[28px] font-bold tracking-[1px] uppercase">
             CHECKOUT
@@ -161,13 +160,14 @@ export default function Checkout({ cartItems }) {
           </div>
         </div>
       </div>
-      <div className="bg-white mt-[32px] p-[24px] lg:w-[350px] rounded-[8px] ">
+      <div className=" mt-[32px] p-[24px] lg:w-[40%] rounded-[8px] lg:mt-[0] w-auto bg-white h-fit">
         <h2 className="text-[#000] text-[18px] font-bold tracking-[1.286px] uppercase mb-[30px]">
           summary
         </h2>
+
         {cartItems.map((item, index) => {
           return (
-            <div key={index} className="w-full marker:">
+            <div key={index} className="">
               {item.quantity >= 1 && cartItems.length >= 1 && (
                 <div className="h-[64px] flex gap-[20px] items-center  justify-between">
                   <div className="flex gap-[16px]">
@@ -232,7 +232,7 @@ export default function Checkout({ cartItems }) {
           </div>
         </div>
         <div className="flex w-full justify-center items-center mt-[32px]">
-          <button className="h-[48px] bg-[#D87D4A] px-[55px] py-[15px] text-[#FFF] text-center text-[13px] font-bold tracking-[1px] uppercase">
+          <button className="h-[48px] bg-[#D87D4A] px-[55px] py-[15px] text-[#FFF] w-full text-center text-[13px] font-bold tracking-[1px] uppercase">
             CONTINUE & PAY
           </button>
         </div>

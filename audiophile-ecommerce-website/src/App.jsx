@@ -87,14 +87,16 @@ function App() {
             path="/:products/:slug"
             element={<SingleProduct handleAddProduct={handleAddProduct} />}
           />
+          <Route
+            path="/checkout"
+            element={<Checkout cartItems={cartItems} />}
+          />
         </Routes>
         <div className="px-[24px]">
-          s{location.pathname !== "/products/checkout" && <WebDescription s />}
+          {location.pathname !== "/checkout" && <WebDescription s />}
         </div>
       </div>
-      <Routes>
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
-      </Routes>
+
       <Footer />
     </div>
   );
