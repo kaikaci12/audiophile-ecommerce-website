@@ -21,7 +21,9 @@ function App() {
 
   function handleRemoveProduct(product) {
     const productExist = cartItems.find((item) => item.id === product.id);
-    if (productExist.quantity > 1) {
+    if (productExist.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
       setCartItems(
         cartItems.map((item) =>
           item.id === product.id
@@ -29,7 +31,6 @@ function App() {
             : item
         )
       );
-    } else {
     }
   }
   function handleAddProduct(product) {
@@ -70,6 +71,7 @@ function App() {
           handleAddProduct={handleAddProduct}
           cartItmQuant={cartItmQuant}
           handleRemoveProduct={handleRemoveProduct}
+          cartActive={cartActive}
         />
       )}
 

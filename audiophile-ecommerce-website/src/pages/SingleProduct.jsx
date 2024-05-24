@@ -12,10 +12,7 @@ export default function SingleProduct({ handleAddProduct }) {
   const singleProduct = useParams();
 
   const singleData = data.filter((productObj) => {
-    return (
-      productObj.slug === singleProduct.slug &&
-      productObj.category === singleProduct.products
-    );
+    return productObj.slug === singleProduct.slug;
   });
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -73,10 +70,11 @@ export default function SingleProduct({ handleAddProduct }) {
 
   return (
     <div className="px-[24px] lg:px-[125px]">
-      <GoBack path={singleProduct?.products} />;
+      <GoBack path={singleProduct?.products} />
+
       {singleData.map((product, index) => {
         return (
-          <div key={index}>
+          <div key={index} className="lg:mt-[56px] mt-[30px]">
             <div className="flex flex-col gap-[24px] sm:flex-row sm:gap-[70px] items-center">
               <img
                 src={handleImage(product)}
@@ -85,9 +83,7 @@ export default function SingleProduct({ handleAddProduct }) {
               />
               <div className="flex flex-col gap-[24px] sm:gap-[32px] lg:w-[50%]">
                 {product.new && (
-                  <NewProductSpan
-                    className={"text-[#D87D4A]  absolute opacity-1 "}
-                  />
+                  <NewProductSpan className={"text-[#D87D4A]    "} />
                 )}
                 <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px]">
                   {product.name}
@@ -156,17 +152,22 @@ export default function SingleProduct({ handleAddProduct }) {
               <h2 className="text-[#000] text-left text-[28px] font-bold tracking-[1px] mt-[20%] uppercase">
                 you may also like
               </h2>
-              {product.others.map((item, index) => {
-                return (
-                  <div key={index} className="flex flex-col gap-[40px] ">
-                    <img src={item.image.mobile} alt="other products" />
-                    <h2 className="text-[#000] text-left text-[22px] font-bold tracking-[1px] uppercase ">
-                      {item.name}
-                    </h2>
-                    <SeeProduct path={item.slug} previousRoot={item.category} />
-                  </div>
-                );
-              })}
+              <div className="sm:flex-row sm:gap-[24px] lg:gap-[30px]  flex flex-col gap-[30px]">
+                {product.others.map((item, index) => {
+                  return (
+                    <div key={index} className="flex flex-col gap-[40px]">
+                      <img src={handleImage(item)} alt="other products" />
+                      <h2 className="text-[#000] text-left text-[22px] font-bold tracking-[1px] uppercase ">
+                        {item.name}
+                      </h2>
+                      <SeeProduct
+                        path={item.slug}
+                        previousRoot={item.category}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         );

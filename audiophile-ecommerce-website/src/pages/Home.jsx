@@ -34,7 +34,9 @@ function HomeComponent() {
       return HeaderDesktop;
     }
   }
-
+  const X99Headphones = data.find(
+    (product) => product.slug === "xx99-mark-two-headphones"
+  );
   return (
     <div>
       <div
@@ -59,7 +61,7 @@ function HomeComponent() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <SeeProduct previousRoot={data[2].category} path={data[2].slug} />
+          <SeeProduct previousRoot={"headphones"} path={X99Headphones.slug} />
         </div>
       </div>
       <div className="px-[24px] lg:px-[100px] ">

@@ -5,11 +5,13 @@ import { useState } from "react";
 function SeeProduct({ className, path, previousRoot }) {
   return (
     <div>
-      <button
-        className={`text-[#FFF] text-[13px] ${className} font-bold leading-[normal] tracking-[1px] bg-[#D87D4A;] px-[30px] py-[15px] mt-[14px] w-100%`}
-      >
-        <Link to={`/${previousRoot}/${path}`}>See Product</Link>
-      </button>
+      <Link to={`/${previousRoot}/${path}`}>
+        <button
+          className={`text-[#FFF] text-[13px] ${className} font-bold leading-[normal] tracking-[1px] bg-[#D87D4A;] px-[30px] py-[15px] mt-[14px] w-100%`}
+        >
+          See Product
+        </button>
+      </Link>
     </div>
   );
 }
