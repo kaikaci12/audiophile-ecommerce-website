@@ -75,6 +75,7 @@ function App() {
           cartItmQuant={cartItmQuant}
           handleRemoveProduct={handleRemoveProduct}
           cartActive={cartActive}
+          handleCartActive={handleCartActive}
         />
       )}
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import data from "../data.json";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function CartStorage({
   cartItems,
@@ -8,12 +9,14 @@ export default function CartStorage({
   handleAddProduct,
   cartActive,
   handleRemoveProduct,
+  setCartActive,
+  handleCartActive,
 }) {
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.quantity * item.price,
     0
   );
-
+  const location = useLocation();
   return (
     <div
       className={`fixed h-full w-full px-[24px] lg:px-[165px] bg-black bg-opacity-40 z-[999] sm:flex sm:flex-col sm:items-end  ${
@@ -87,8 +90,11 @@ export default function CartStorage({
             {`$${totalPrice}`}
           </span>
         </div>
-        <Link to={"/checkout"}>
-          <button className="text-[#FFF] text-center text-[13px] font-bold leading-[normal] tracking-[1px] uppercase w-full px-[52px] py-[15px] h-[48px] bg-[#D87D4A] cursor-pointer">
+        <Link to={cartItems.length > 0 ? "/checkout" : ""}>
+          <button
+            onClick={() => handleCartActive(cartActive)}
+            className="text-[#FFF] text-center text-[13px] font-bold leading-[normal] tracking-[1px] uppercase w-full px-[52px] py-[15px] h-[48px] bg-[#D87D4A] cursor-pointer"
+          >
             checkout
           </button>
         </Link>

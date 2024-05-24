@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
 import GoBack from "../components/GoBack";
 export default function Checkout({ cartItems }) {
   const [eMoney, setEmoney] = useState(false);
@@ -16,6 +17,7 @@ export default function Checkout({ cartItems }) {
       </div>
     );
   }
+
   return (
     <div className="bg-[#FAFAFA]  px-[24px] lg:p-[165px] lg:flex lg:gap-[30px]  lg:justify-center   ">
       <div className="bg-white  p-[24px] rounded-[8px] lg:w-[60%]">
@@ -235,6 +237,46 @@ export default function Checkout({ cartItems }) {
           <button className="h-[48px] bg-[#D87D4A] px-[55px] py-[15px] text-[#FFF] w-full text-center text-[13px] font-bold tracking-[1px] uppercase">
             CONTINUE & PAY
           </button>
+        </div>
+      </div>
+      <div className="fixed w-full h-full bg-[#000]  bg-opacity-40 flex items-center justify-center z-[999]">
+        <div className="bg-white w-full h-[600px] p-[32px] flex flex-col rounded-[8px] ">
+          <div className="flex flex-col gap-[16px] ">
+            <div className="flex items-center ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                viewBox="0 0 64 64"
+                fill="none"
+              >
+                <circle cx="32" cy="32" r="32" fill="#D87D4A" />
+              </svg>
+              <svg
+                className="absolute  left-[50px]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="21"
+                viewBox="0 0 26 21"
+                fill="none"
+              >
+                <path
+                  d="M1.75391 11.3328L8.50542 18.0843L24.3085 2.28125"
+                  stroke="white"
+                  strokeWidth="4"
+                />
+              </svg>
+            </div>
+            <h2 className="text-[#000] text-[24px] font-bold leading-[28px] tracking-[0.857px] uppercase">
+              THANK YOU FOR YOUR ORDER
+            </h2>
+            <p className="text-[#000] text-[15px] font-normal leading-[25px] opacity-50">
+              You will receive an email confirmation shortly.
+            </p>
+          </div>
+          <div>
+            <div className="h-[232px] rounded-[8px] bg-[#F1F1F1] px-[24px]"></div>
+          </div>
         </div>
       </div>
     </div>
