@@ -10,7 +10,7 @@ import WebDescription from "./components/WebDescription";
 import Footer from "./components/Footer";
 import ShoppingCart from "./components/Directors/ShoppingCart";
 import CartStorage from "./components/CartStorage";
-import Checkout from "./components/Checkout";
+import Checkout from "./pages/Checkout";
 import { useLocation } from "react-router";
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -93,7 +93,7 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
       </Routes>
       <Footer />
     </div>
