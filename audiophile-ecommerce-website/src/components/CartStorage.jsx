@@ -16,7 +16,7 @@ export default function CartStorage({
     (sum, item) => sum + item.quantity * item.price,
     0
   );
-  const location = useLocation();
+
   return (
     <div
       className={`fixed h-full w-full px-[24px] lg:px-[165px] bg-black bg-opacity-40 z-[999] sm:flex sm:flex-col sm:items-end  ${
