@@ -25,8 +25,8 @@ export default function YX1Earphones() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const path = "earphones";
-  const previousPath = "yx1-earphones";
+  const path = "yx1-earphones";
+  const previousPath = "earphones";
   return (
     <div className="flex flex-col gap-[24px] items-start justify-start sm:flex-row">
       <img

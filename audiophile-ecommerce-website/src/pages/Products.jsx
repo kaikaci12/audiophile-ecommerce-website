@@ -10,7 +10,6 @@ export default function Products() {
     (productObj) => productObj.category === params.products
   );
 
-  console.log(params);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +31,7 @@ export default function Products() {
       return product.categoryImage.desktop;
     }
   }
+
   return (
     <div className="">
       <div className="h-[100px] bg-black uppercase text-white flex justify-center items-center sm:h-[247px]">

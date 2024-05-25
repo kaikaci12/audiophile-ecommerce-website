@@ -55,9 +55,13 @@ export default function Checkout({ cartItems, handleRemoveAll }) {
       </div>
     );
   }
-
+  const lastProduct = cartItems[cartItems.length - 1];
+  console.log(lastProduct);
   return (
     <div className="">
+      <div className="absolute left-[100px] top-[160px] ">
+        <GoBack path={`${lastProduct.category}/${lastProduct.slug}`} />
+      </div>
       {order && (
         <OrderSubmit cartItems={cartItems} handleRemoveAll={handleRemoveAll} />
       )}
