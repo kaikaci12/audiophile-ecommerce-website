@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Complete from "/assets/complete.svg";
 export default function OrderSubmit({ cartItems }) {
+  const [visible, setVisible] = useState(1);
+
+  function viewOthers() {
+    setVisible(cartItems.length);
+  }
+  function viewLess() {
+    setVisible(1);
+  }
   return (
     <div className="">
       <div className="fixed  w-full overflow-y-hidden h-full sm:px-[114px] bg-[#000] px-[24px]    bg-opacity-40 flex items-center justify-center z-[999]">
@@ -19,7 +27,7 @@ export default function OrderSubmit({ cartItems }) {
           <div className="">
             <div className="sm:flex sm:w-full  sm:items-center  sm:h-[140px] sm:justify-center sm:mt-[33px]">
               <div className="h-full  sm:w-[60%]  sm:h-[140px] sm:rounded-[8px]  rounded-[8px] bg-[#F1F1F1] px-[24px] py-[24px] mt-[24px]">
-                {cartItems.slice(0, 1).map((item, index) => {
+                {cartItems.slice(0, visible).map((item, index) => {
                   return (
                     <div key={index} className="">
                       {item.quantity >= 1 && cartItems.length >= 1 && (
@@ -46,11 +54,20 @@ export default function OrderSubmit({ cartItems }) {
                     </div>
                   );
                 })}
-                <div className="w-full flex justify-center mt-[12px]">
+                <div
+                  onClick={visible > 1 ? viewLess : viewOthers}
+                  className="w-full flex justify-center mt-[12px]"
+                >
                   {cartItems.length > 1 && (
                     <span className="text-[#000] text-center  text-[12px] font-bold tracking-[-0.214px] opacity-50">
-                      and {cartItems.slice(0, cartItems.length - 1).length}{" "}
-                      other item(s){" "}
+                      {visible > 1 ? (
+                        "View Less"
+                      ) : (
+                        <>
+                          and {cartItems.slice(0, cartItems.length - 1).length}{" "}
+                          other item(s)
+                        </>
+                      )}
                     </span>
                   )}
                 </div>

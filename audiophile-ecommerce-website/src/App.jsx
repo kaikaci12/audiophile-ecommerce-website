@@ -61,25 +61,23 @@ function App() {
   const location = useLocation();
   return (
     <div>
-      <Header
-        cartActive={cartActive}
-        handleCartActive={handleCartActive}
-        cartItems={cartItems}
-      />
-
-      {cartActive && (
-        <CartStorage
-          cartItems={cartItems}
-          handleRemoveAll={handleRemoveAll}
-          handleAddProduct={handleAddProduct}
-          cartItmQuant={cartItmQuant}
-          handleRemoveProduct={handleRemoveProduct}
+      <div>
+        <Header
           cartActive={cartActive}
           handleCartActive={handleCartActive}
+          cartItems={cartItems}
         />
-      )}
-
-      <div>
+        {cartActive && (
+          <CartStorage
+            cartItems={cartItems}
+            handleRemoveAll={handleRemoveAll}
+            handleAddProduct={handleAddProduct}
+            cartItmQuant={cartItmQuant}
+            handleRemoveProduct={handleRemoveProduct}
+            cartActive={cartActive}
+            handleCartActive={handleCartActive}
+          />
+        )}
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/:products" element={<Products />} />
@@ -88,12 +86,13 @@ function App() {
             path="/:products/:slug"
             element={<SingleProduct handleAddProduct={handleAddProduct} />}
           />
+
           <Route
             path="/checkout"
             element={<Checkout cartItems={cartItems} />}
           />
         </Routes>
-        <div className="px-[24px]">
+        <div className=" ">
           {location.pathname !== "/checkout" && <WebDescription s />}
         </div>
       </div>
