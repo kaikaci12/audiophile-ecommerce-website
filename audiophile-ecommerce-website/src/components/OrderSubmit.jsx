@@ -11,7 +11,7 @@ export default function OrderSubmit({ cartItems, handleRemoveAll }) {
     setVisible(1);
   }
   return (
-    <div className="">
+    <div className="z-[1000]  h-full bg-[#000] fixed overflow-hidden">
       <div className="fixed  w-full overflow-y-hidden h-full sm:px-[114px] bg-[#000] px-[24px]    bg-opacity-40 flex items-center justify-center z-[999]">
         <div className="bg-white lg:w-[540px]  h-fit   z-[999] w-full sm:p-[48px]  p-[32px] flex flex-col rounded-[8px] ">
           <div className="flex flex-col gap-[16px] ">
@@ -26,7 +26,7 @@ export default function OrderSubmit({ cartItems, handleRemoveAll }) {
             </p>
           </div>
           <div className="">
-            <div className="sm:flex sm:w-ful  h-full   sm:items-center   sm:justify-center sm:mt-[33px]">
+            <div className="sm:flex sm:w-full  h-full   sm:items-center items-center w-full   sm:justify-center sm:mt-[33px]">
               <div className=" flex flex-col gap-[10px]  sm:w-[60%]   sm:rounded-[8px]  rounded-[8px] bg-[#F1F1F1] px-[24px] py-[24px] mt-[24px]">
                 {cartItems.slice(0, visible).map((item, index) => {
                   return (
@@ -73,7 +73,7 @@ export default function OrderSubmit({ cartItems, handleRemoveAll }) {
                   )}
                 </div>
               </div>
-              <div className="  sm:w-[40%]   sm:rounded-tl-none rounded-br-[8px] sm:rounded-tr-[8px] sm:rounded-bl-none  rounded-tl-none sm:rounded-br-[8px] rounded-tr-none rounded-bl-[8px] bg-[#000] flex flex-col gap-[8px] px-[24px] py-[16px]">
+              <div className=" sticky  min-h-[140px] mt-[20px] sm:w-[40%]   sm:rounded-tl-none rounded-br-[8px] sm:rounded-tr-[8px] sm:rounded-bl-none  rounded-tl-none sm:rounded-br-[8px] rounded-tr-none rounded-bl-[8px] bg-[#000] flex flex-col gap-[8px] px-[24px] py-[16px]">
                 <span className="text-[#FFF] text-[15px] font-normal leading-[25px] opacity-50">
                   GRAND TOTAL
                 </span>

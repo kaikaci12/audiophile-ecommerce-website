@@ -23,7 +23,7 @@ export default function CartStorage({
         cartActive ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       }`}
     >
-      <div className=" rounded-[8px] bg-[#FFF]   duration-500 ease-in-out   px-[28px] py-[31px] z-[99] top-[100px] flex flex-col gap-[30px] opacity-100">
+      <div className=" rounded-[8px] bg-[#FFF]      px-[28px] py-[31px] z-[99] top-[100px] flex flex-col gap-[30px] opacity-100">
         <div className="flex w-full justify-between">
           <h2 className="text-[#000] text-[18px] font-bold tracking-[1.286px] uppercase">
             Cart({cartItems.length})
