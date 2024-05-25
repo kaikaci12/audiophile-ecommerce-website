@@ -16,14 +16,17 @@ export default function Checkout({ cartItems, handleRemoveAll }) {
   const [country, setCountry] = useState("");
   const [error, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
-
-  function isValid(name, address, zip, city, country, email) {
+  const [moneyNum, setMoneyNum] = useState("");
+  const [pin, setPin] = useState("");
+  function isValid(name, address, zip, city, country, email, moneyNum, pin) {
     if (
       name === "" ||
       address === "" ||
       zip === "" ||
       city === "" ||
       country === "" ||
+      moneyNum === "" ||
+      pin === "" ||
       !email.includes("@") ||
       email === "" ||
       !email.includes(".")
@@ -33,7 +36,7 @@ export default function Checkout({ cartItems, handleRemoveAll }) {
     return true;
   }
   function handleSubmit() {
-    if (isValid(name, address, zip, city, country, email)) {
+    if (isValid(name, address, zip, city, country, email, moneyNum, pin)) {
       setOrder(true);
     } else {
       setInputError(true);
@@ -252,34 +255,38 @@ export default function Checkout({ cartItems, handleRemoveAll }) {
                 </div>
               </div>
             </form>
-            <div className="sm:flex sm:gap-[30px]">
-              <label
-                className={`text-[#000] ${
-                  error && "text-red-700 "
-                } sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]`}
-              >
-                e-Money Number
-                <input
-                  type="number"
-                  className={`h-[56px] ${
-                    error && "border-[#CD2C2C]"
-                  } px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40`}
-                />
-              </label>
-              <label
-                className={`text-[#000] ${
-                  error && "text-red-700 "
-                } sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]`}
-              >
-                e-Money PIN
-                <input
-                  type="number"
-                  className={`h-[56px] ${
-                    error && "border-[#CD2C2C]"
-                  } px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40`}
-                />
-              </label>
-            </div>
+            {eMoney && (
+              <div className="sm:flex sm:gap-[30px]">
+                <label
+                  className={`text-[#000] ${
+                    error && "text-red-700 "
+                  } sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]`}
+                >
+                  e-Money Number
+                  <input
+                    onChange={(e) => setMoneyNum(e.target.value)}
+                    type="number"
+                    className={`h-[56px] ${
+                      error && "border-[#CD2C2C]"
+                    } px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40`}
+                  />
+                </label>
+                <label
+                  className={`text-[#000] ${
+                    error && "text-red-700 "
+                  } sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]`}
+                >
+                  e-Money PIN
+                  <input
+                    onChange={(e) => setPin(e.target.value)}
+                    type="number"
+                    className={`h-[56px] ${
+                      error && "border-[#CD2C2C]"
+                    } px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40`}
+                  />
+                </label>
+              </div>
+            )}
           </div>
           <div className="flex gap-[32px] mt-[30px] items-center">
             <svg

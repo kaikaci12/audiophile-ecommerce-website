@@ -97,7 +97,11 @@ export default function SingleProduct({ handleAddProduct }) {
                   <button className="text-[#000] text-center text-[13px] font-bold tracking-[1px] h-[48px] bg-[#F1F1F1] px-[50px] py-[15px] ">
                     1
                   </button>
-                  <div onClick={() => handleAddProduct(product)}>
+                  <div
+                    onClick={() => {
+                      handleAddProduct(product);
+                    }}
+                  >
                     <AddToCart />
                   </div>
                 </div>

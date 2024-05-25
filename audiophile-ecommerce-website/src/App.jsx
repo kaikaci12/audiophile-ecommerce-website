@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import HomeComponent from "./pages/Home";
 import "./App.css";
@@ -13,11 +13,18 @@ import CartStorage from "./components/CartStorage";
 import Checkout from "./pages/Checkout";
 import { useLocation } from "react-router";
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = window.localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
 
   function handleRemoveAll() {
     setCartItems([]);
   }
+  useEffect(() => {
+    if (window.localStorage.getItem("cartItems"))
+      window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   function handleRemoveProduct(product) {
     const productExist = cartItems.find((item) => item.id === product.id);
