@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import GoBack from "../components/GoBack";
 import OrderSubmit from "../components/OrderSubmit";
-export default function Checkout({ cartItems }) {
+export default function Checkout({ cartItems, handleRemoveAll }) {
   const [eMoney, setEmoney] = useState(false);
   const [cash, setCash] = useState(false);
   const [order, setOrder] = useState(false);
@@ -21,8 +21,10 @@ export default function Checkout({ cartItems }) {
   }
 
   return (
-    <div className={`${order ? "overflow-hidden" : ""} `}>
-      {order && <OrderSubmit cartItems={cartItems} />}
+    <div className="">
+      {order && (
+        <OrderSubmit cartItems={cartItems} handleRemoveAll={handleRemoveAll} />
+      )}
       <div className="bg-[#FAFAFA]  px-[24px] lg:p-[165px] lg:flex lg:gap-[30px]  lg:justify-center   ">
         <div className="bg-white  p-[24px] rounded-[8px] lg:w-[60%]">
           <div className="flex flex-col gap-[32px] ">
@@ -38,23 +40,23 @@ export default function Checkout({ cartItems }) {
                   Name
                   <input
                     type="text"
-                    className="h-[56px]  rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                    className="h-[56px]  px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                   />
                 </label>
                 <label className="text-[#000] sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]">
                   Email Address
                   <input
                     type="text"
-                    className="h-[56px]  rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                    className="h-[56px]  px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                   />
                 </label>
               </div>
 
-              <label className="text-[#000] sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]">
+              <label className="text-[#000]  sm:w-[50%] text-[12px] font-bold tracking-[-0.214px] flex flex-col gap-[9px]">
                 Phone Number
                 <input
                   type="text"
-                  className="h-[56px]  rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                  className="h-[56px] px-[16px]  rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                 />
               </label>
             </form>
@@ -66,7 +68,7 @@ export default function Checkout({ cartItems }) {
                 Your Address
                 <input
                   type="text"
-                  className="h-[56px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                  className="h-[56px] px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                 />
               </label>
               <div className="flex flex-col sm:flex-row sm:gap-[30px] gap-[40px]">
@@ -81,7 +83,7 @@ export default function Checkout({ cartItems }) {
                   City
                   <input
                     type="text"
-                    className="h-[56px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                    className="h-[56px] px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                   />
                 </label>
               </div>
@@ -90,7 +92,7 @@ export default function Checkout({ cartItems }) {
                 Country
                 <input
                   type="text"
-                  className="h-[56px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                  className="h-[56px] px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                 />
               </label>
             </form>
@@ -153,14 +155,14 @@ export default function Checkout({ cartItems }) {
                 e-Money Number
                 <input
                   type="number"
-                  className="h-[56px] rounded-[8px] border-[1px]  border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                  className="h-[56px] px-[16px] rounded-[8px] border-[1px]  border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                 />
               </label>
               <label className="text-[#000] text-[12px] font-bold sm:w-[50%] tracking-[-0.214px] flex flex-col gap-[9px]">
                 e-Money PIN
                 <input
                   type="number"
-                  className="h-[56px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
+                  className="h-[56px] px-[16px] rounded-[8px] border-[1px] border-[solid] border-[#CFCFCF] bg-[#FFF] text-[#000] text-[14px] font-bold tracking-[-0.25px] opacity-40"
                 />
               </label>
             </div>
@@ -238,7 +240,9 @@ export default function Checkout({ cartItems }) {
             </div>
           </div>
           <div
-            onClick={() => setOrder(true)}
+            onClick={() => {
+              setOrder(true);
+            }}
             className="flex w-full justify-center items-center mt-[32px]"
           >
             <button className="h-[48px] bg-[#D87D4A] px-[55px] py-[15px] text-[#FFF] w-full text-center text-[13px] font-bold tracking-[1px] uppercase">

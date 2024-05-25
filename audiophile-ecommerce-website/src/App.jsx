@@ -14,11 +14,9 @@ import Checkout from "./pages/Checkout";
 import { useLocation } from "react-router";
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [cartItmQuant, setCartItmQuant] = useState(1);
 
   function handleRemoveAll() {
     setCartItems([]);
-    setCartItmQuant(1);
   }
 
   function handleRemoveProduct(product) {
@@ -72,7 +70,6 @@ function App() {
             cartItems={cartItems}
             handleRemoveAll={handleRemoveAll}
             handleAddProduct={handleAddProduct}
-            cartItmQuant={cartItmQuant}
             handleRemoveProduct={handleRemoveProduct}
             cartActive={cartActive}
             handleCartActive={handleCartActive}
@@ -89,7 +86,12 @@ function App() {
 
           <Route
             path="/checkout"
-            element={<Checkout cartItems={cartItems} />}
+            element={
+              <Checkout
+                cartItems={cartItems}
+                handleRemoveAll={handleRemoveAll}
+              />
+            }
           />
         </Routes>
         <div className=" ">
