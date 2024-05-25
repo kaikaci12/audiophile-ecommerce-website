@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import NewProductSpan from "../components/NewProductSpan";
 import SeeProduct from "../components/Directors/Button";
 import { useState, useEffect } from "react";
-
-export default function Products() {
+import { useLocation } from "react-router";
+export default function Products({ pathname }) {
   const params = useParams();
   const products = data.filter(
     (productObj) => productObj.category === params.products
@@ -31,7 +31,15 @@ export default function Products() {
       return product.categoryImage.desktop;
     }
   }
-
+  if (
+    pathname !== "/headphones" &&
+    pathname !== "/earphones" &&
+    pathname !== "/speakers"
+  ) {
+    return (
+      <div className="text-[50px] text-black w-full ">something Went wrong</div>
+    );
+  }
   return (
     <div className="">
       <div className="h-[100px] bg-black uppercase text-white flex justify-center items-center sm:h-[247px]">

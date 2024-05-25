@@ -8,7 +8,7 @@ import ProductImages from "./imageData";
 import SeeProduct from "../components/Directors/Button";
 import GoBack from "../components/GoBack";
 import { useState, useEffect } from "react";
-export default function SingleProduct({ handleAddProduct }) {
+export default function SingleProduct({ handleAddProduct, pathname }) {
   const singleProduct = useParams();
 
   const singleData = data.filter((productObj) => {
@@ -67,7 +67,15 @@ export default function SingleProduct({ handleAddProduct }) {
       return product.gallery.third.desktop;
     }
   }
+  console.log(pathname);
 
+  if (
+    !singleData.some((item) => `/${item.category}/${item.slug}` === pathname)
+  ) {
+    return (
+      <div className="text-[50px] text-black w-full">Something went wrong</div>
+    );
+  }
   return (
     <div className="px-[24px] lg:px-[125px]">
       <GoBack path={singleProduct?.products} />

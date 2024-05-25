@@ -64,6 +64,7 @@ function App() {
     setCartActive(!isActive);
   }
   const location = useLocation();
+
   return (
     <div>
       <div>
@@ -84,11 +85,19 @@ function App() {
         )}
         <Routes>
           <Route path="/" element={<HomeComponent />} />
-          <Route path="/:products" element={<Products />} />
+          <Route
+            path="/:products"
+            element={<Products pathname={location.pathname} />}
+          />
 
           <Route
             path="/:products/:slug"
-            element={<SingleProduct handleAddProduct={handleAddProduct} />}
+            element={
+              <SingleProduct
+                handleAddProduct={handleAddProduct}
+                pathname={location.pathname}
+              />
+            }
           />
 
           <Route
